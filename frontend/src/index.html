@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Control Escolar</title>
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="index.css">
+  
+  <!-- Iconos (SVG inline para evitar dependencias externas masivas, o usar iconos como emojis por simplicidad) -->
+</head>
+<body>
+
+  <div class="app-container">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="logo">
+          <span class="logo-icon">🎓</span>
+          <span class="logo-text">Control Escolar</span>
+        </div>
+        <p class="subtitle">Panel de Administración</p>
+      </div>
+
+      <nav class="sidebar-nav">
+        <ul>
+          <li data-view="dashboard" class="active">
+            <span class="nav-icon">📊</span><span class="nav-text">Dashboard</span>
+          </li>
+          <li class="nav-section-title">Académico</li>
+          <li data-view="grados">
+            <span class="nav-icon">📚</span><span class="nav-text">Grados</span>
+          </li>
+          <li data-view="grupos">
+            <span class="nav-icon">🏷️</span><span class="nav-text">Grupos</span>
+          </li>
+          <li data-view="alumnos">
+            <span class="nav-icon">👨‍🎓</span><span class="nav-text">Alumnos</span>
+          </li>
+          <li data-view="asistencias">
+            <span class="nav-icon">✅</span><span class="nav-text">Asistencias</span>
+          </li>
+          
+          <li class="nav-section-title">Personal</li>
+          <li data-view="docentes">
+            <span class="nav-icon">👨‍🏫</span><span class="nav-text">Docentes</span>
+          </li>
+          <li data-view="personal">
+            <span class="nav-icon">👷‍♂️</span><span class="nav-text">Personal Admin</span>
+          </li>
+          
+          <li class="nav-section-title">Familia</li>
+          <li data-view="tutores">
+            <span class="nav-icon">👨‍👩‍👧</span><span class="nav-text">Tutores</span>
+          </li>
+        </ul>
+      </nav>
+      
+      <div class="sidebar-footer">
+        <p>V 1.0.0</p>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+      <!-- Top header for current view context -->
+      <header class="top-header">
+        <h1 id="current-view-title">Dashboard</h1>
+        <div class="user-profile">
+          <div class="avatar">AD</div>
+          <span class="user-name">Administrador</span>
+        </div>
+      </header>
+
+      <!-- View container where JS injects content -->
+      <div id="view-container" class="content-wrapper">
+        <!-- Dashboard injected here -->
+      </div>
+    </main>
+  </div>
+
+  <!-- MODAL GLOBAL -->
+  <div id="modal" class="modal-backdrop hidden">
+    <div class="modal-window">
+      <div class="modal-header">
+        <h2 id="modal-title" class="modal-title"></h2>
+        <button id="closeModal" class="btn-close">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+      <div id="modal-body" class="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>
